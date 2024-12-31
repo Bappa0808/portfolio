@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <script>
+        function toggleForm() {
+            const formSection = document.getElementById('blog-form-section');
+            formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a th:href="@{/}" th:text="'Home'"></a></li>
+                <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
+                <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
+                <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
+            </ul>
+            <div class="login-button">
+                <a th:href="@{/login}" class="btn-login" th:text="'Login'"></a>
+            </div>
+        </nav>
+    </header>
+<main>
+    <h1>Blogs</h1>
+
+    <!-- Add New Blog Form (Hidden Initially) -->
+    <section id="blog-form-section" style="display: none;">
+        <h2>Post a New Blog</h2>
+        <form th:action="@{/blogs/add}" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Blog Title" required>
+            <textarea name="description" placeholder="Blog Description" required></textarea>
+            <input type="file" name="image">
+            <button type="submit">Post Blog</button>
+        </form>
+    </section>
+
+    <button onclick="toggleForm()" class="toggle-form-btn">Post a New Blog</button>
+
+    <!-- Display All Blogs -->
+    <section>
+        <h2>All Blogs</h2>
+        <div class="blogs-container">
+            <div th:each="blog : ${blogs}" class="blog-card">
+                <h3 th:text="${blog.blogTitle}"></h3>
+                <p th:text="${blog.blogDescription}"></p>
+
+                <!-- Delete Blog Form -->
+                <form th:action="@{/blog/delete/{id}(id=${blog.blogId})}" method="post">
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

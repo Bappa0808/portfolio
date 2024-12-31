@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a th:href="@{/}" th:text="'home'"></a></li>
+                <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
+                <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
+                <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
+            </ul>
+            <div class="login-button">
+                <a th:href="@{/login}" class="btn-login" th:text="'Login'"></a>
+            </div>
+        </nav>
+    </header>
+    <header class="header">
+        <h1>About Me</h1>
+    </header>
+    <div class="main-about">
+        <div class="img-about">
+        
+        </div>
+        <div class="line"> 1</div>
+        <div class="education" id="clg">
+            <h3>B Tech in CSE</h3>
+            <p>AIEM * MAKAUT</p>
+        </div>
+        <div class="education" id="twealve">
+            <h3>12th Standard Science</h3>
+            <p>Lowada high School </p>
+
+        </div>
+        <div class="education" id="tenth">
+            <h3>10th Standard</h3>
+            <p>Lowada high School </p>
+
+        </div>
+        
+    </div>
+    <div class="internship">
+        <div class="persistent">
+            <h3>Persistent System</h3>
+            <p>LMS Summer Learning Internship</p>
+        </div>
+        <div class="persistent">
+            <h3>Persistent System</h3>
+            <p>LMS Summer Learning Internship</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>

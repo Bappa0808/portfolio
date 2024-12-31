@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="/css/projects.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a th:href="@{/}" th:text="'Home'"></a></li>
+                <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
+                <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
+                <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
+            </ul>
+            <div class="login-button">
+                <a th:href="@{/login}" class="btn-login" th:text="'Login'"></a>
+            </div>
+        </nav>
+    </header>
+    <header>
+        <h1>Projects</h1>
+    </header>
+    <section>
+        <div class="add-project-container">
+            <button class="btn-add" onclick="showAddForm()">Add Project</button>
+        </div>
+
+        <!-- Form to Add New Project -->
+        <div id="addProjectForm" class="form-container" style="display: none;">
+            <form th:action="@{/projects/add}" method="post">
+                <input type="text" name="projectName" placeholder="Project Name" required>
+                <textarea name="projectDescription" placeholder="Project Description" required></textarea>
+                <input type="url" name="projectLink" placeholder="Project Link" required>
+                <button type="submit" class="btn-save">Save</button>
+                <button type="button" class="btn-cancel" onclick="hideAddForm()">Cancel</button>
+            </form>
+        </div>
+
+        <ul class="project_section">
+            <li class="project" th:each="project : ${projects}">
+                <h2 th:text="${project.projectName}"></h2>
+                <p th:text="${project.projectDescription}"></p>
+                <a th:href="${project.projectLink}" class="project-link" th:text="'View Project'"></a>
+                <div class="action-buttons">
+                    <button class="btn-edit" th:onclick="'editProject(' + ${project.projectId} + ')'">Edit</button>
+                    <form th:action="@{/projects/delete}" method="post" style="display: inline;">
+                        <input type="hidden" name="projectId" th:value="${project.projectId}">
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <script>
+        function showAddForm() {
+            document.getElementById("addProjectForm").style.display = "block";
+        }
+        function hideAddForm() {
+            document.getElementById("addProjectForm").style.display = "none";
+        }
+    </script>
+</body>
+</html>

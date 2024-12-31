@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Professional Portfolio</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a th:href="@{/}" th:text="'home'"></a></li>
+                <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
+                <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
+                <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
+            </ul>
+            <div class="login-button">
+                <a th:href="@{/login}" class="btn-login" th:text="'Login'"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <svg width="100%" height="50px" viewBox="0 0 600 50">
+                    <defs>
+                        <linearGradient id="textGradient" gradientTransform="rotate(90)">
+                            <stop offset="0%" stop-color="#4285F4">
+                                <animate attributeName="stop-color" values="#4285F4;#EA4335;#FBBC05;#34A853;#4285F4" dur="3s" repeatCount="indefinite" />
+                            </stop>
+                            <stop offset="100%" stop-color="#34A853">
+                                <animate attributeName="stop-color" values="#34A853;#4285F4;#EA4335;#FBBC05;#34A853" dur="3s" repeatCount="indefinite" />
+                            </stop>
+                        </linearGradient>
+                    </defs>
+                    <text x="0" y="35" font-size="50" font-family="Arial" font-style="bold" fill="url(#textGradient)">
+                        Welcome to My Portfolio
+                    </text>
+                </svg>
+                <p th:text="'Explore my skills, projects, and professional journey.'"></p>
+                <strong class="dynamic-role">I am a <span id="dynamicRole">Developer</span></strong>
+                <div class="skills">
+                    <span>Java</span>
+                    <span>SpringBoot</span>
+                    <span>React</span>
+                    <span>Hibernate</span>
+                </div>
+                <br>
+                <a th:href="@{/projects}" class="btn-explore" th:text="'Explore Projects'"></a>
+            </div>
+            <div class="hero-image">
+                <img src="/images/hero.png" alt="Coder at work">
+            </div>
+        </section>
+        
+        
+        <section class="Introduction">
+            <div class="Introduction_me_pic">
+                <img src="/images/intro_me.png" alt="Coder at work">
+            </div>
+            <div class="Introduction_me">
+                <h3>Introduction</h3>
+                <p>this is random </p>
+            </div>
+
+        </section>
+        <h2 class="skills_heading">Skills</h2>
+        <section class="skills_core">
+            <div class="skills1">
+                <h4>--Programming Language--</h4>
+                <p>C Programming
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p>C++ 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p>Core Java
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+            </div>
+            <div class="skills1">
+                <h4>--Development--</h4>
+                <p> SrpingBoot
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p> Hibernate
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p> React
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star  checked"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p>  HTML5 + Css3 + javaScript
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p> MySQL
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+
+            </div>
+
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contact Me</h3>
+                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p>Phone: <a href="tel:+123456789">+123 456 789</a></p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <img src="/images/linked-in.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/Bappa0808" target="_blank" aria-label="GitHub">
+                        <img src="/images/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                        <img src="/images/code.svg" alt="Leet-Code">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Me</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/blogs">Blogs</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe</h3>
+                <p>Get updates about my latest projects and blogs.</p>
+                <form action="/subscribe" method="POST">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <a href="#top" class="back-to-top">Back to Top</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const roles = ["Developer", "Coder", "Designer"];
+            let index = 0;
+            const dynamicRole = document.getElementById("dynamicRole");
+    
+            setInterval(() => {
+                index = (index + 1) % roles.length;
+                dynamicRole.textContent = roles[index];
+            }, 2000); // Change role every 2 seconds
+        });
+    </script>
+    
+    
+</body>
+</html>
