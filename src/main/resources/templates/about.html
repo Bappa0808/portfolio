@@ -10,7 +10,7 @@
     <header>
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a th:href="@{/}" th:text="'home'"></a></li>
+                <li><a th:href="@{/}" th:text="'Home'"></a></li>
                 <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
                 <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
                 <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
@@ -25,7 +25,7 @@
     </header>
     <div class="main-about">
         <div class="img-about">
-        
+            <img src="/images/hero.png" width="150" alt="Coder at work">
         </div>
         <div class="line"> 1</div>
         <div class="education" id="clg">
@@ -44,17 +44,43 @@
         </div>
         
     </div>
-    <div class="internship">
-        <div class="persistent">
+    <h2>Internship</h2>
+    <div class="internship slide-in">
+        <div class="persistent zoomIn">
             <h3>Persistent System</h3>
             <p>LMS Summer Learning Internship</p>
+             <li>Gained a strong foundation in Data Structures and Algorithms (DSA), focusing on problem-solving and optimizing code efficiency.</li>
+             <li>Enhanced proficiency in Core Java, mastering object-oriented programming concepts and practical implementations.</li>
+             <li>Learned the fundamentals of Database Management Systems (DBMS), including database design, SQL queries, and data retrieval techniques.</li>
         </div>
-        <div class="persistent">
-            <h3>Persistent System</h3>
+        <div class="persistent zoomIn">
+            <h3>Edu-Skills Cloud Foundation</h3>
             <p>LMS Summer Learning Internship</p>
+            <li>Developed a foundational understanding of Cloud Computing concepts, including cloud service models and deployment strategies.</li>
+            <li>Gained hands-on experience with AWS Cloud Services, such as EC2, S3, and RDS, for scalable and efficient solutions.</li>
+            <li>Learned best practices for architecting cloud-based applications, focusing on cost optimization, security, and performance.</li>
         </div>
     </div>
 
     
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const element = document.querySelector(".internship");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("slide-in");
+                }
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the element is visible
+    );
+
+    observer.observe(element);
+});
+
+</script>
 </html>

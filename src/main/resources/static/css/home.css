@@ -1,8 +1,9 @@
+/* Basic Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #344153d0;
+    background-color: #3d556d;
     color: #333;
 }
 
@@ -12,9 +13,11 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #101b29;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     color: white;
 }
 
+/* Navbar Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -27,6 +30,7 @@ body {
     font-weight: bold;
 }
 
+/* Login Button */
 .btn-login {
     padding: 8px 15px;
     background-color: #ff5722;
@@ -35,6 +39,66 @@ body {
     border-radius: 5px;
     font-weight: bold;
 }
+
+/* Toggle Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: #101b29;
+        border: 1px solid #2c3e50;
+        border-radius: 5px;
+    }
+
+    .btn-login {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: #ff5722;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+
 
 .hero {
     display: flex;
@@ -156,10 +220,14 @@ svg {
     margin-left: 60px;
 }
 .Introduction_me{
-     margin-left: 150px;
-     width: 200px;
+     margin-left: 120px;
+     width: 600px;
      height: 300px;
 }
+.Introduction_me p{
+    font: italic 1.2rem "Fira Sans", serif;
+}
+
 .btn-view, .btn-read {
     margin-top: 10px;
     display: inline-block;
@@ -173,7 +241,6 @@ svg {
 .skills_core{
     display: flex;
     justify-content: space-around;
-    border: 2px solid white;
     width: 90%;
     margin-left: 60px;
     margin-top: 90px;
@@ -191,6 +258,7 @@ svg {
     color: white;
     padding: 40px 20px;
     text-align: center;
+    margin-top: 40px;
 }
 
 .container {

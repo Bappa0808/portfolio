@@ -10,8 +10,13 @@
 <body>
     <header>
         <nav class="navbar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
-                <li><a th:href="@{/}" th:text="'home'"></a></li>
+                <li><a th:href="@{/}" th:text="'Home'"></a></li>
                 <li><a th:href="@{/about}" th:text="'About Me'"></a></li>
                 <li><a th:href="@{/projects}" th:text="'Projects'"></a></li>
                 <li><a th:href="@{/blogs}" th:text="'Blogs'"></a></li>
@@ -62,7 +67,7 @@
             </div>
             <div class="Introduction_me">
                 <h3>Introduction</h3>
-                <p>this is random </p>
+                <p>I'm Bappa Bera, a passionate Full Stack Developer and Graphic Designer with expertise in Java, Spring Boot, React, and Hibernate. A 2024 graduate in Computer Science, I’ve built impactful projects like a Hospital Management System and an E-learning Platform. With hands-on experience in modern technologies and a knack for problem-solving, this site showcases my professional journey and skills. Let's connect and collaborate!</p>
             </div>
 
         </section>
@@ -138,10 +143,10 @@
         <div class="container">
             <div class="footer-section">
                 <h3>Contact Me</h3>
-                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                <p>Phone: <a href="tel:+123456789">+123 456 789</a></p>
+                <p>Email: <a href="mailto:your-email@example.com">bappaberas0808@gmail.com</a></p>
+                <p>Phone: <a href="tel:+123456789">+91 6296142213</a></p>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/bappa0808" target="_blank" aria-label="LinkedIn">
                         <img src="/images/linked-in.svg" alt="LinkedIn">
                     </a>
                     <a href="https://github.com/Bappa0808" target="_blank" aria-label="GitHub">
@@ -186,6 +191,11 @@
                 dynamicRole.textContent = roles[index];
             }, 2000); // Change role every 2 seconds
         });
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
     </script>
     
     
